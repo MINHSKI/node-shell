@@ -1,5 +1,5 @@
-const path = require('path');
-
+//const path = require('path');
+const pwd = require('./pwd.js');
 //Output a prompt
 process.stdout.write('prompt > ');
 
@@ -9,8 +9,13 @@ process.stdin.on('data', (data) => {
 
     switch (cmd) {
         case 'pwd':
-            process.stdout.write(process.cwd());
-            break;
+        pwd();
+        // process.stdout.write(process.cwd());
+        // in case we just want to receive a string
+        // from module pwd.js then we just stdout the string
+        // as normal
+        // process.stdout.write(pwd);
+        break;
         case 'ls':
             //console log directory contents
             break;
